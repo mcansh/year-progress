@@ -11,7 +11,7 @@ module.exports = {
 
     return [
       `eslint --cache --fix ${filenamesForESLint}`,
-      `prettier --write ${escapedFileNames}`,
+      `prettier --write ${filenamesForESLint}`,
       `jest --bail --findRelatedTests ${escapedFileNames}`,
     ];
   },

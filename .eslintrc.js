@@ -6,11 +6,9 @@ module.exports = {
       {
         devDependencies: [
           '__tests__/**/*',
-          'test-utils/index.tsx',
           '@types/jest-dom.d.ts',
           'next.config.js',
           'prettier.config.js',
-          'stylelint.config.js',
           'lint-staged.config.js',
         ],
       },

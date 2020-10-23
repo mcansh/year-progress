@@ -1,12 +1,12 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 
-import { Layout } from '~/components/layout';
+import { useServiceWorker } from '~/hooks/use-service-worker';
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <Layout>
-    <Component {...pageProps} />
-  </Layout>
-);
+const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
+  useServiceWorker();
+
+  return <Component {...pageProps} />;
+};
 
 export default App;

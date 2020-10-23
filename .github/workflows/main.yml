@@ -1,5 +1,7 @@
-name: build, test, and codecov
+name: CI
+
 on: push
+
 jobs:
   test:
     name: Test on node ${{ matrix.node_version }}
@@ -7,6 +9,7 @@ jobs:
     strategy:
       matrix:
         node_version: [10, 12, 13, 14]
+
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node_version }}
@@ -14,11 +17,8 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: install yarn
-        run: npm install -g yarn
-
-      - name: yarn install, build, and validate
+      - name: build & validate
         run: |
-          yarn install
-          yarn build
-          yarn validate
+          npm ci
+          npm run build
+          npm run validate

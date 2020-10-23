@@ -1,11 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import { getDaysInYear, getDayOfYear } from 'date-fns';
+import { NextPage } from 'next';
 
-const Title = styled.h1`
-  font-size: 10rem;
-  color: ${props => props.theme.primary};
-`;
-
-const Index = () => <Title>Hello World</Title>;
+const Index: NextPage = () => {
+  const now = new Date();
+  const daysInYear = getDaysInYear(new Date(now.getFullYear()));
+  const currentDay = getDayOfYear(now);
+  return <h1>{Math.round((currentDay / daysInYear) * 100)}</h1>;
+};
 
 export default Index;
