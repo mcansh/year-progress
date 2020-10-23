@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import React from 'react';
+import { useEffect } from 'react';
 
 const useServiceWorker = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     const sw = async () => {
       if (
         process.env.NODE_ENV === 'production' &&

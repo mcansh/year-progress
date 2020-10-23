@@ -1,4 +1,3 @@
-import React from 'react';
 import { getDaysInYear, getDayOfYear } from 'date-fns';
 import { NextPage } from 'next';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { AppProps } from 'next/app';
 
 import { useServiceWorker } from '~/hooks/use-service-worker';
